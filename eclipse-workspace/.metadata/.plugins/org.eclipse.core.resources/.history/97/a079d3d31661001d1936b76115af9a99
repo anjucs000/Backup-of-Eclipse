@@ -1,0 +1,17 @@
+package com.obsqura.selenium.TestNGSample;
+
+import org.openqa.selenium.By;
+import org.testng.annotations.Test;
+
+public class CheckBackgroundColor extends Base {
+	@Test
+	public void checkBgColor() {
+		String backGroundColor,expBgColor="rgb(0, 123, 255)";
+		backGroundColor=driver.findElement(By.xpath("//button[@id='button-one']")).getCssValue("background-color");
+		
+	}
+	public void checkTextColor() {
+	String color;
+	color=driver.findElement(By.xpath("//button[@id='button-one']")).getCssValue("color");
+	}
+}

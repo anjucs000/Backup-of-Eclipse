@@ -1,0 +1,5 @@
+package com.obsqura.selenium.pageObjectModel_POM;
+
+public class SimpleFormDemoPageFactoryTest {
+
+}

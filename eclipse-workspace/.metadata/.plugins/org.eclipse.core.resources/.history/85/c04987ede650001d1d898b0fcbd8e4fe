@@ -1,0 +1,11 @@
+package com.obsqura.selenium.SeleniumCourse;
+
+public class BrowserCommands extends Base {
+
+	public static void main(String[] args) {
+		BrowserCommands obj=new BrowserCommands();
+		obj.initialiseBrowser();
+
+	}
+
+}

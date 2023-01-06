@@ -1,0 +1,34 @@
+package com.obsqura.selenium.TestNGSample;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+import org.testng.annotations.DataProvider;
+
+public class ParameterizationInTestNG extends Base{
+	//@Test
+	@Parameters({"sendKeysInput"})//passing parameter through testNG
+	public void methodWithParameter(String sendKeysInput) {
+		By enterMessageField=By.xpath("//input[@id='single-input-field']");
+		By showMessageButton=By.xpath("//button[@id='button-one']");
+		WebElement enterMessage=driver.findElement(enterMessageField);
+		enterMessage.sendKeys(sendKeysInput);
+	}
+	//passing parameter value through dataprovider
+	@Test(dataProvider="SearchProvider")
+	public void methodWithDataprovider(String input) {
+		
+		By enterMessageField=By.xpath("//input[@id='single-input-field']");
+		By showMessageButton=By.xpath("//button[@id='button-one']");
+		WebElement enterMessage=driver.findElement(enterMessageField);
+		enterMessage.sendKeys(input);
+	}
+	@DataProvider(name="SearchProvider")
+	public Object[][] getDataFromDataprovider(){
+		return new Object[][]
+		{
+			{"Mango"}
+		};
+	}
+}

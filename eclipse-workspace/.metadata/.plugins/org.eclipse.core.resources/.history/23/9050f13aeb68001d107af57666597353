@@ -1,0 +1,44 @@
+package com.obsqura.selenium.TestNGSample;
+
+import org.openqa.selenium.By;
+import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+public class RadioButtonCombinations extends Base {
+	
+	@Test //no radiobuttons selected
+	public void noRadioButtonsSelected() {
+		Boolean radio1,radio2,age1,age2,age3;
+		String expText="Gender :\nAge group:",ActText="";
+		driver.navigate().to("https://selenium.obsqurazone.com/radio-button-demo.php");
+		radio1=driver.findElement(By.xpath("//label[@for='inlineRadio11']")).isSelected();
+		radio2=driver.findElement(By.xpath("//label[@for='inlineRadio21']")).isSelected();
+		age1=driver.findElement(By.xpath("//label[@for='inlineRadio22']")).isSelected();
+		age2=driver.findElement(By.xpath("//label[@for='inlineRadio23']")).isSelected();
+		age3=driver.findElement(By.xpath("//label[@for='inlineRadio24']")).isSelected();
+		if(radio1==false && radio2==false && age1==false && age2==false && age3==false) {
+			driver.findElement(By.xpath("//button[@id='button-two']")).click();
+			ActText=driver.findElement(By.xpath("//div[@id='message-two']")).getText();
+		}
+		Assert.assertEquals(ActText, expText);
+	}
+	@Test //Only male selected
+	public void maleButtonSelected() {
+		Boolean radio1,radio2,age1,age2,age3;
+		String expText="Gender Male:\nAge group:",ActText;
+		driver.navigate().to("https://selenium.obsqurazone.com/radio-button-demo.php");
+		driver.findElement(By.xpath("//label[@for='inlineRadio11']")).click();
+		radio1=driver.findElement(By.xpath("//label[@for='inlineRadio11']")).isSelected();
+		radio2=driver.findElement(By.xpath("//label[@for='inlineRadio21']")).isSelected();
+		age1=driver.findElement(By.xpath("//label[@for='inlineRadio22']")).isSelected();
+		age2=driver.findElement(By.xpath("//label[@for='inlineRadio23']")).isSelected();
+		age3=driver.findElement(By.xpath("//label[@for='inlineRadio24']")).isSelected();
+		if(radio1==true && radio2==false && age1==false && age2==false && age3==false) {
+			driver.findElement(By.xpath("//button[@id='button-two']")).click();
+			ActText=driver.findElement(By.xpath("//div[@id='message-two']")).getText();
+		}
+		Assert.assertEquals(ActText, expText);
+	}
+
+}

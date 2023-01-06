@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <test name="Test(failed)">
+    <classes>
+      <class name="com.obsqura.selenium.TestNGSample.RadioButtonCombinations">
+        <methods>
+          <include name="FemaleAndAge2ButtonSelected"/>
+          <include name="FemaleAndAge1ButtonSelected"/>
+          <include name="femaleButtonSelected"/>
+          <include name="FemaleAndAge3ButtonSelected"/>
+          <include name="age2ButtonSelected"/>
+          <include name="MaleAndAge1ButtonSelected"/>
+          <include name="age3ButtonSelected"/>
+          <include name="MaleAndAge2ButtonSelected"/>
+          <include name="MaleAndAge3ButtonSelected"/>
+          <include name="maleButtonSelected"/>
+          <include name="initialiseBrowser"/>
+          <include name="age1ButtonSelected"/>
+          <include name="noRadioButtonsSelected"/>
+        </methods>
+      </class> <!-- com.obsqura.selenium.TestNGSample.RadioButtonCombinations -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

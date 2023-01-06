@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.obsqura.selenium.TestNGSample.SoftAssert&apos; to &apos;SoftAssertSample&apos;&#x0D;&#x0A;- Original project: &apos;TestNGSample&apos;&#x0D;&#x0A;- Original element: &apos;com.obsqura.selenium.TestNGSample.SoftAssert&apos;&#x0D;&#x0A;- Renamed element: &apos;com.obsqura.selenium.TestNGSample.SoftAssertSample&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Rename similarly named elements&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;SoftAssert&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/test\/java&lt;com.obsqura.selenium.TestNGSample{SoftAssert.java[SoftAssert" matchStrategy="1" name="SoftAssertSample" qualified="false" references="true" similarDeclarations="true" stamp="1668528772628" textual="false" version="1.0"/>
+</session>

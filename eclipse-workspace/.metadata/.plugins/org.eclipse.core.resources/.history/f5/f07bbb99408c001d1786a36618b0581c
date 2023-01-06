@@ -1,0 +1,9 @@
+package homeWork;
+
+public class FileDownloadObsqSite extends DriverLoading{
+	public void downloadFile() {
+		driver.navigate().to("https://selenium.obsqurazone.com/file-download.php");
+		
+	}
+
+}

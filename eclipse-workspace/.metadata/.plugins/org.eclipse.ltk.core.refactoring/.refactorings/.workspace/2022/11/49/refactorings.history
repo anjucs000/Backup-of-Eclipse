@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename Java project &apos;PointObjectModel-POM&apos; to &apos;PageObjectModel-POM&apos;&#x0D;&#x0A;- Original element: &apos;PointObjectModel-POM&apos;&#x0D;&#x0A;- Renamed element: &apos;PointObjectModel-POM&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename Java project &apos;PointObjectModel-POM&apos;" flags="7" id="org.eclipse.jdt.ui.rename.java.project" input="=PointObjectModel-POM" name="PageObjectModel-POM" references="true" stamp="1669628826288" version="1.0"/>
+</session>

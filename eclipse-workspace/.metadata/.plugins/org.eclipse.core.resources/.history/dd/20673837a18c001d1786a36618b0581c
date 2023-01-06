@@ -1,0 +1,56 @@
+package pages;
+
+import java.io.IOException;
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+
+import com.obsqura.selenium.pageObjectModel_POM.BasePOM;
+
+import utilities.ExcelUtility;
+import utilities.PageUtility;
+import utilities.WaitUtility;
+
+public class SimpleFormDemoPageFactory extends BasePOM {
+	public WebDriver driver;
+	public SimpleFormDemoPageFactory(WebDriver driver) {
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+	}
+	@FindBy(xpath="//input[@id='single-input-field']")
+	private WebElement enterMessageField;
+	
+	@FindBy(xpath="//button[@id='button-one']")
+	private WebElement showMessage;
+	
+	@FindBy(xpath="//div[@id='message-one']")
+	private WebElement yourMessage;
+	
+	
+public void verifySingleInputField() throws IOException {
+		
+		String inputMessage=ExcelUtility.getStringMultiColor(1, 0, "\\src\\main\\java\\Resources\\TestData.xlsx", "Simple Form Demo");
+		String expectedText=ExcelUtility.getStringMultiColor(2, 0, "\\src\\main\\java\\Resources\\TestData.xlsx", "Simple Form Demo");
+		String actualMessage,expectedMessage=expectedText+inputMessage;
+		//driver.findElement(enterMessageField).sendKeys(inputMessage);
+		PageUtility.enterText(enterMessageField, inputMessage);
+		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(10));//explicit wait
+		//wait.until(ExpectedConditions.elementToBeClickable(showMessage));
+		WebElement showMessageWebElement=driver.findElement(showMessage);
+		WaitUtility.waitForElementClickable(driver, showMessageWebElement);
+		showMessageWebElement.click();
+		wait.until(ExpectedConditions.presenceOfElementLocated(yourMessage));
+		actualMessage=driver.findElement(yourMessage).getText();
+		Assert.assertEquals(actualMessage, expectedMessage, "Expected and actual outputs are not same");
+		}
+	
+
+
+}

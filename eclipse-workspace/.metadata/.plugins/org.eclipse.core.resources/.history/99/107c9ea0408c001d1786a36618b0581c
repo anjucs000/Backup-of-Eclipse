@@ -1,0 +1,30 @@
+package homeWork;
+
+import java.io.IOException;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+public class FileDownloadObsqSite extends DriverLoading{
+	public void downloadFile() {
+		driver.navigate().to("https://selenium.obsqurazone.com/file-download.php");
+		WebElement textArea=driver.findElement(By.xpath("//textarea[@id='textbox']"));
+		textArea.sendKeys("Apple");
+		WebElement generateFile=driver.findElement(By.xpath("//button[@id='create']"));
+		generateFile.click();
+		WebElement downloadButton=driver.findElement(By.xpath("//a[@class='btn btn-success my-4']"));
+		String sourceLocation=downloadButton.getAttribute("href");
+		String wget_command = "cmd /c C:\\Wget\\wget.exe -P C:\\Selenium_Wget --no-check-certificate " + sourceLocation;
+		try {
+	        Process exec = Runtime.getRuntime().exec(wget_command);
+	        int exitVal = exec.waitFor();
+	        System.out.println("Exit value: " + exitVal);
+	        } catch ( IOException ex) {
+	        System.out.println(ex.toString());
+	        }
+	        driver.close();
+	        }
+	
+}
+
+

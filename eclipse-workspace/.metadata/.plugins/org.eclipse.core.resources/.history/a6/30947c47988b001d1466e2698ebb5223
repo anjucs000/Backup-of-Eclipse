@@ -1,0 +1,23 @@
+package com.obsqura.selenium.TestNGSample;
+
+import java.io.IOException;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.annotations.Test;
+
+public class FileUploadSample extends Base{
+	@Test
+	public void fileUploadMethod() {
+		driver.navigate().to("https://www.w3schools.com/howto/howto_html_file_upload_button.asp");
+		WebElement uploadFile=driver.findElement(By.xpath("//input[@id='myFile']"));
+		uploadFile.sendKeys("C:\\Users\\anjuc\\OneDrive\\Desktop\\JAVA TRAINING\\Automation\\Assignments\\Notes\\Automation.docx");
+	}
+	public void fileUploadInIlovePDF() throws IOException {
+		driver.navigate().to("https://www.ilovepdf.com/word_to_pdf");
+		WebElement selectFile=driver.findElement(By.xpath("//a[@id='pickfiles']"));
+		selectFile.click();
+		Runtime.getRuntime().exec("C:\\Users\\anjuc\\OneDrive\\Desktop\\JAVA TRAINING\\AutoIT\\FileUpload.exe");
+	}
+	
+}

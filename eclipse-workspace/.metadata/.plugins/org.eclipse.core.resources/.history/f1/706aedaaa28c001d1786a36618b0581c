@@ -1,0 +1,16 @@
+package com.obsqura.selenium.pageObjectModel_POM;
+
+import java.io.IOException;
+
+import pages.SimpleFormDemoPageFactory;
+
+public class SimpleFormDemoPageFactoryTest extends BasePOM {
+	SimpleFormDemoPageFactory obj;
+	
+	public void verifySelectInput() throws IOException {
+		
+		obj=new SimpleFormDemoPageFactory(driver);
+		obj.verifySingleInputField();
+	}
+
+}

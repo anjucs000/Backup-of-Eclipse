@@ -1,0 +1,17 @@
+package com.obsqura.selenium.SeleniumCourse;
+
+public class BrowserCommands extends Base {
+	String actualTitle;
+	public void basicCommands() {
+		actualTitle=driver.getTitle();
+		System.out.print(actualTitle);
+	}
+
+	public static void main(String[] args) {
+		BrowserCommands obj=new BrowserCommands();
+		obj.initialiseBrowser();
+		obj.basicCommands();
+
+	}
+
+}

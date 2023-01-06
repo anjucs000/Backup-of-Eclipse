@@ -1,0 +1,17 @@
+package com.obsqura.selenium.TestNGSample;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.annotations.Test;
+
+public class FileUploadSample extends Base{
+	@Test
+	public void fileUploadMethod() {
+		driver.navigate().to("https://www.ilovepdf.com/word_to_pdf");
+		WebElement pickFiles=driver.findElement(By.xpath("//a[@id='pickfiles']"));
+		pickFiles.click();
+		pickFiles.sendKeys("C:\\Users\\anjuc\\OneDrive\\Desktop\\JAVA TRAINING\\Automation\\Assignments\\Notes\\Automation.docx");
+	}
+
+
+}

@@ -1,0 +1,32 @@
+package homeWork;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+
+public class checkAssertions {
+
+	WebDriver driver;
+	
+	public void checkURL() {
+		String actURL,expURL;
+		System.setProperty("webdriver.chrom.driver", "C:\\Users\\anjuc\\eclipse-workspace\\TestNGSample\\src\\main\\java\\Resources\\chromedriver.exe");
+		driver=new ChromeDriver();
+		driver.get("https://www.amazon.in/");
+		actURL=driver.getCurrentUrl();
+		expURL="https://www.amazon.in/";
+		Assert.assertEquals(actURL, expURL);
+	}
+	public void checkPageSource() {
+		String actPgSource;
+		actPgSource=driver.getPageSource();
+		if(actPgSource.isEmpty()) {
+		Assert.assertFalse(false, actPgSource);
+		}
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

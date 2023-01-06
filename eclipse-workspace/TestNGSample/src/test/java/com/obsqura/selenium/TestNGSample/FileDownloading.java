@@ -1,0 +1,28 @@
+package com.obsqura.selenium.TestNGSample;
+
+import java.io.IOException;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.annotations.Test;
+
+public class FileDownloading extends Base{
+	@Test
+	public void fileDownloadGuru99() throws InterruptedException {
+		driver.navigate().to("http://demo.guru99.com/test/yahoo.html");
+		WebElement downloadButton=driver.findElement(By.xpath("//a[@id='messenger-download']"));
+		downloadButton.click();
+		String sourceLocation = downloadButton.getAttribute("href");
+		String wget_command = "cmd /c C:\\Wget\\wget.exe -P C:\\Selenium_Wget --no-check-certificate " + sourceLocation;
+		try {
+	        Process exec = Runtime.getRuntime().exec(wget_command);
+	        int exitVal = exec.waitFor();
+	        System.out.println("Exit value: " + exitVal);
+	        } catch ( IOException ex) {
+	        System.out.println(ex.toString());
+	        }
+	        driver.close();
+	        }
+	}
+
+

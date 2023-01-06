@@ -1,0 +1,8 @@
+package constants;
+
+public class Constants {
+	
+	public static String CONFIGfILE="\\src\\main\\java\\Resources\\config.properties";
+
+
+}
